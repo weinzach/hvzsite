@@ -1,8 +1,8 @@
 hvz:
   long: 'Humans vs Zombies'
-  longLoc: 'Humans vs Zombies @ RIT'
+  longLoc: 'Nerf Tech Humans vs Zombies'
   short: 'HvZ'
-  shortLoc: 'HvZ @ RIT'
+  shortLoc: 'Nerf Tech'
   humans: >
     {numHumans, plural,
       =1 {Human}

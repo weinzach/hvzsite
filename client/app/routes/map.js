@@ -77,7 +77,7 @@ export default Ember.Route.extend(ResetScrollMixin, {
           });
         };
 
-        Ember.$.getScript("//maps.google.com/maps/api/js?libraries=visualization&callback=map_callback");
+        Ember.$.getScript("//maps.google.com/maps/api/js?key=AIzaSyCRFTHfsxZJ1mngMYMY61MPf1LsTeeQ9tQ&libraries=visualization&callback=map_callback");
       });
     }
   }
