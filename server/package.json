@@ -29,6 +29,7 @@
     "rc": "^1.2.1",
     "sails": "^0.12.13",
     "sails-disk": "^0.10.10",
+    "sails-mongo": "^0.12.2",
     "sails-mysql": "^0.12.2",
     "skipper-disk": "^0.5.9",
     "unirest": "^0.5.1",
