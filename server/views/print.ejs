@@ -127,14 +127,13 @@
     </div>
     <div class="bottom">
       <div class="ids">
-        <% for (var j = 0; j < profile.humanIds.length && j < 2; ++j) { %>
           <hr>
           <% if (preview) { %>
             <p class="human-id">Human Id:</p>
           <% } else { %>
-            <p class="human-id">Human Id #<%= profile.humanIds.length-j %>: <%= profile.humanIds[j].idString %></p>
+            <p class="human-id">Human Id #: <%= profile.humanIds[0].idString %></p>
+			<p class="human-id">http://play.hvzpoly.org</p>
           <% } %>
-        <% } %>
       </div>
     </div>
   </div>
