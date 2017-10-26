@@ -681,7 +681,7 @@ module.exports = {
     });
   },
 
-  print: function (req, res) {
+    print_id: function (req, res) {
     var preview = req.param('preview');
     User.find({
       where: {
@@ -701,7 +701,7 @@ module.exports = {
         return res.negotiate(err);
       }
 
-      return res.view('print', {
+      return res.view('print_id', {
         preview: (preview) ? true : false,
         profiles: users.map(function (user) {
           if (user.avatarPath) {
@@ -720,6 +720,31 @@ module.exports = {
             sails.config.hvz.url + "q/" + user.humanIds[1].idString + user.zombieId,
             {size: 100});
 
+          return user;
+        })
+      });
+    });
+  },
+  
+  print_email: function (req, res) {
+    User.find({
+      where: {
+        or: [
+          {access: 'player'},
+          {access: 'hidden'},
+          {access: 'mod'},
+          {access: 'admin'},
+          {access: 'superadmin'}
+        ]
+      },
+      sort: {name: 1}
+    }).populate("humanIds").exec(function (err, users) {
+      if (err) {
+        return res.negotiate(err);
+      }
+
+      return res.view('print_email', {
+        profiles: users.map(function (user) {
           return user;
         })
       });

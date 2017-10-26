@@ -1,0 +1,6 @@
+<% for (var i = 0; i < profiles.length; ++i) { %>
+  <% var profile = profiles[i]; %>
+       <% if (profile.email) { %>
+        <p><%= profile.email %></p>
+       <% } %>
+<% } %>

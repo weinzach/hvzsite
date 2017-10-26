@@ -97,7 +97,8 @@ module.exports.routes = {
   'post /api/v2/admin/users/:id/notify': 'AdminUserController.sendNotification',
   'post /api/v2/admin/notify': 'AdminUserController.sendNotificationToGroup',
   'post /api/v2/admin/users/markPrinted': 'AdminUserController.markPrinted',
-  'get /print': 'AdminUserController.print',
+  'get /print': 'AdminUserController.print_id',
+  'get /email': 'AdminUserController.print_email',
   'get /auth/l/qr/:id': 'AdminUserController.loginKey',
 
   // AdminContentController rules
