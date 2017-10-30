@@ -727,9 +727,37 @@ module.exports = {
   },
   
   print_email: function (req, res) {
+	var id = req.param("id").toString();
+	if(id=="active"){
+		console.log("active");
     User.find({
       where: {
         or: [
+          {access: 'player'},
+          {access: 'hidden'},
+          {access: 'mod'},
+          {access: 'admin'},
+          {access: 'superadmin'}
+        ],
+      },
+      sort: {name: 1}
+    }).populate("humanIds").exec(function (err, users) {
+      if (err) {
+        return res.negotiate(err);
+      }
+
+      return res.view('print_email', {
+        profiles: users.map(function (user) {
+          return user;
+        })
+      });
+    });
+  }
+  else{
+      User.find({
+      where: {
+        or: [
+		  {access: 'inactive'},
           {access: 'player'},
           {access: 'hidden'},
           {access: 'mod'},
@@ -749,6 +777,7 @@ module.exports = {
         })
       });
     });
+  }
   },
 
   markPrinted: function (req, res) {
