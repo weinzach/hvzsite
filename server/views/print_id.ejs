@@ -131,7 +131,11 @@
           <% if (preview) { %>
             <p class="human-id">Human Id:</p>
           <% } else { %>
-            <p class="human-id">Human Id #: <%= profile.humanIds[0].idString %></p>
+		    <% if (profile.humanIds.length>1) { %>
+            <p class="human-id">Human Id #: <%= profile.humanIds[profile.humanIds.length-1].idString %></p>
+			<% } else { %>
+			<p class="human-id">Human Id #: <%= profile.humanIds[profile.humanIds.length-1].idString %></p>
+			<% } %>
 			<p class="human-id">http://play.hvzpoly.org</p>
           <% } %>
       </div>
