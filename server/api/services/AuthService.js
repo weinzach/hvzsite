@@ -157,7 +157,7 @@ passport.use('google-register', new GoogleStrategy({
           return done(new Error("You seem to already be registered! Try logging in instead."));
         }
         else if (user == undefined) {
-          var ok = false;
+          var ok = true;
           if (sails.config.auth.signupDomains.length == 0)
             ok = true;
           else {
